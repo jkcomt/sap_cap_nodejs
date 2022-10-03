@@ -1,0 +1,37 @@
+{
+  "xsappname": "my-bookshop-auth",
+  "tenant-mode": "dedicated",
+  "scopes": [
+    {
+      "name": "$XSAPPNAME.viewer",
+      "description": "viewer"
+    },
+    {
+      "name": "$XSAPPNAME.admin",
+      "description": "admin"
+    }
+  ],
+  "attributes": [],
+  "role-templates": [
+    {
+      "name": "viewer",
+      "description": "generated",
+      "scope-references": [
+        "$XSAPPNAME.viewer"
+      ],
+      "attribute-references": []
+    },
+    {
+      "name": "admin",
+      "description": "generated",
+      "scope-references": [
+        "$XSAPPNAME.admin"
+      ],
+      "attribute-references": []
+    }
+  ],
+  "role-collections":[{"name":"my-bookshop-roles",
+    "description":"my-bookshop role collection",
+    "role-template-references":["$XSAPPNAME.admin","$XSAPPNAME.viewer"]
+    }]
+}
